@@ -22,10 +22,8 @@ jobs:
       - name: Build & Push Docker VacationCalculateService
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          context: ./VacationCalculateService
           image: pycuk2/vacationcalculateservice
           tags: latest
-          registry: docker.io
-          dockerfile: ./VacationCalculateService/Dockerfile
+          dockerfile: Dockerfile
           username: pycuk2
           password: ${{ secrets.DOCKER_PASSWORD }}
