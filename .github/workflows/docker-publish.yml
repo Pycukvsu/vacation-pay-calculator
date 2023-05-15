@@ -19,33 +19,12 @@ jobs:
           cache: maven
       - name: Generate module jars
         run: mvn clean install -DskipTests
-      - name: Build & Push Docker data-service
+      - name: Build & Push Docker VacationCalculateService
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          context: ./data-service
-          image: ivandvurechenskiy/data-service
+          image: pycuk2/vacationcalculateservice
           tags: latest
           registry: docker.io
-          dockerfile: ./data-service/Dockerfile
-          username: ivandvurechenskiy
-          password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build & Push Docker Image Send-Manager
-        uses: mr-smithers-excellent/docker-build-push@v5
-        with:
-          context: ./send-manager
-          image: ivandvurechenskiy/new-send-manager
-          tags: latest
-          registry: docker.io
-          dockerfile: ./send-manager/Dockerfile
-          username: ivandvurechenskiy
-          password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build & Push Docker Image sender-service
-        uses: mr-smithers-excellent/docker-build-push@v5
-        with:
-          context: ./sender-service
-          image: ivandvurechenskiy/new-sender-service
-          tags: latest
-          registry: docker.io
-          dockerfile: ./sender-service/Dockerfile
-          username: ivandvurechenskiy
+          dockerfile: Dockerfile
+          username: pycuk2
           password: ${{ secrets.DOCKER_PASSWORD }}
