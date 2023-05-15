@@ -22,7 +22,7 @@ jobs:
       - name: Build & Push Docker VacationCalculateService
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: pycuk2/vacationcalculateservice
+          image: vacationcalculateservice
           tags: latest
           registry: docker.io
           dockerfile: ./Dockerfile
