@@ -24,6 +24,7 @@ jobs:
         with:
           image: pycuk2/vacationcalculateservice
           tags: latest
+          registry: docker.io
           dockerfile: Dockerfile
           username: pycuk2
           password: ${{ secrets.DOCKER_PASSWORD }}
