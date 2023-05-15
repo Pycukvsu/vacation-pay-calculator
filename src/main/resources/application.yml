@@ -1,0 +1,10 @@
+logging:
+  level:
+    s7.Application: WARN
+    org.springframework.web: ERROR
+    org.neoflex.vacationcalclate: DEBUG
+  pattern:
+    console: "%d{dd-MM-yyyy HH:mm:ss} - %msg%n"
+    file: "%d{dd-MM-yyyy HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: C:/Games/VacationCalculate/src/main/resources/logs/vacationCalculate.log
