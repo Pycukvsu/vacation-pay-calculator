@@ -1,7 +1,9 @@
 package com.neoflex.vacationcalclate.function;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.util.AssertionErrors;
 
 class CalculateFunctionTest {
 
@@ -9,6 +11,6 @@ class CalculateFunctionTest {
 
     @Test
     void calculateVacationPay() {
-        System.out.println(calculateFunction.calculateVacationPay(100000, 14));
+        Assertions.assertEquals(47781.57, calculateFunction.calculateVacationPay(100000, 14));
     }
 }
