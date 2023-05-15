@@ -29,6 +29,7 @@ public class VacationApi {
         }else {
             logger.warn("Incorrect data was entered");
             return 0;
+
         }
     }
 }
