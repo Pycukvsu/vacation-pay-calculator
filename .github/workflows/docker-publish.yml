@@ -2,9 +2,9 @@ name: CI/CD Flow
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -22,7 +22,8 @@ jobs:
       - name: Build & Push Docker VacationCalculateService
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: vacationcalculateservice
+          context: ./VacationCalculateService
+          image: pycuk2/vacationcalculateservice
           tags: latest
           registry: docker.io
           dockerfile: ./VacationCalculateService/Dockerfile
